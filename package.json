@@ -1,6 +1,6 @@
 {
   "name": "gitflowtest",
-  "version": "1.0.0",
+  "version": "1.0.0-beta.1",
   "license": "MIT",
   "scripts": {
     "ng": "ng",
@@ -11,8 +11,8 @@
     "nightly-publish": "npm run build && bash scripts/nightly-publish",
     "start-release": "bash scripts/start-release",
     "finish-release": "bash scripts/finish-release",
-    "test": "ng test",
-    "lint": "ng lint",
+    "test": "ng test --code-coverage --single-run --sourcemap=false",
+    "lint": "tslint --format codeFrame -c ./tslint.json \"./src/**/*.ts\" -e \"./src/**/typings.d.ts\" -e \"./src/environments/**\"",
     "e2e": "ng e2e"
   },
   "private": true,
